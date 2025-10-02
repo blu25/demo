@@ -2,19 +2,21 @@
   <body>
     <script>
       function navigate() {
-        document.querySelector("iframe").src = document.querySelector("#url").value;
+        const newframe = document.createElement('iframe');
+        newframe.src = document.querySelector("#url").value;
+        document.body.appendChild(newframe);
       }
     </script>
 
     <form>
-      <textarea placeholder="paste text here!" width="64" height="48" />Put your big text here.</textarea>
+      <textarea placeholder="paste text here!" cols="64" rows="12" />Put your big text here.</textarea>
     </form>
     <div>
-    <input type="text" id="url" placeholder="URL to navigate" width="64" />
+    <input type="text" id="url" placeholder="URL to navigate" value="https://captive.apple.com/" width="64" />
     <button onclick="navigate()">Go!</button>
     </div>
 
-    <iframe width="640" height="480">
+    <!-- <iframe width="640" height="480"> -->
 
     </iframe>
   </body>

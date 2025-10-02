@@ -1,10 +1,17 @@
 <html>
   <body>
     <script>
+      var fragment_num = 0;
+
       function navigate() {
         const newframe = document.createElement('iframe');
         newframe.src = document.querySelector("#url").value;
         document.body.appendChild(newframe);
+      }
+
+      function fragment_navigate() {
+        location.href = `#${fragment_num}`;
+        fragment_num += 1;
       }
     </script>
 
@@ -14,6 +21,7 @@
     <div>
     <input type="text" id="url" placeholder="URL to navigate" value="https://captive.apple.com/" width="64" />
     <button onclick="navigate()">Go!</button>
+    <button onclick="fragment_navigate()">Do fragment navigation</button>
     </div>
 
     <!-- <iframe width="640" height="480"> -->

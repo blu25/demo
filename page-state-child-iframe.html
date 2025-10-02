@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <script>
+      function navigate() {
+        document.querySelector("iframe").src = document.querySelector("#url").value;
+      }
+    </script>
+
+    <form>
+      <textarea placeholder="paste text here!" width="64" height="48" />
+    </form>
+    <div>
+    <input type="text" id="url" placeholder="URL to navigate" width="64" />
+    <button onclick="navigate()">Go!</button>
+    </div>
+
+    <iframe width="640" height="480">
+
+    </iframe>
+  </body>
+</html>
